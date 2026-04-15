@@ -1,151 +1,121 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Casamento Kimberly & Willian</title>
+<meta charset="UTF-8">
+<title>Casamento</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Great+Vibes&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      background-color: #eef1f5;
-      font-family: 'Playfair Display', serif;
-      color: #5c6f8c;
-      text-align: center;
-    }
+<style>
+body {
+  margin: 0;
+  background: #eef1f5;
+  overflow: hidden;
+  font-family: 'Playfair Display', serif;
+}
 
-    /* ABERTURA */
-    #abertura {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+/* ABERTURA */
+#abertura {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: fadeIn 2s ease;
+}
 
-    #abertura h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 60px;
-      margin-bottom: 20px;
-    }
+.nomes {
+  font-family: 'Great Vibes', cursive;
+  font-size: 60px;
+  color: #5c6f8c;
+  opacity: 0;
+  animation: aparecer 2s ease forwards;
+}
 
-    .btn-abrir {
-      border: 1px solid #5c6f8c;
-      padding: 12px 30px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+.sub {
+  margin-top: 10px;
+  letter-spacing: 2px;
+  font-size: 14px;
+  opacity: 0;
+  animation: aparecer 2s ease forwards;
+  animation-delay: 1s;
+}
 
-    .btn-abrir:hover {
-      background: #5c6f8c;
-      color: white;
-    }
+.btn {
+  margin-top: 40px;
+  padding: 12px 30px;
+  border: 1px solid #5c6f8c;
+  cursor: pointer;
+  opacity: 0;
+  animation: aparecer 2s ease forwards;
+  animation-delay: 2s;
+}
 
-    /* CONVITE (ESCONDIDO INICIALMENTE) */
-    #convite {
-      display: none;
-      max-width: 650px;
-      margin: 50px auto;
-      background: #ffffff;
-      padding: 50px 30px;
-      border: 1px solid #5c6f8c;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      animation: fade 1.2s ease;
-    }
+.btn:hover {
+  background: #5c6f8c;
+  color: white;
+}
 
-    @keyframes fade {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+/* CONVITE */
+#convite {
+  display: none;
+  max-width: 650px;
+  margin: 50px auto;
+  background: white;
+  padding: 50px;
+  border-radius: 12px;
+  animation: subir 1.2s ease;
+}
 
-    .titulo {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
+@keyframes aparecer {
+  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(20px); }
+}
 
-    .nomes {
-      font-family: 'Great Vibes', cursive;
-      font-size: 52px;
-      margin: 20px 0;
-    }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-    .texto {
-      font-size: 18px;
-      line-height: 1.6;
-      margin: 15px 0;
-    }
+@keyframes subir {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    .botao {
-      margin-top: 30px;
-    }
-
-    .botao a {
-      text-decoration: none;
-      border: 1px solid #5c6f8c;
-      padding: 12px 25px;
-      color: #5c6f8c;
-      transition: 0.3s;
-    }
-
-    .botao a:hover {
-      background: #5c6f8c;
-      color: white;
-    }
-
-  </style>
+</style>
 </head>
 
 <body>
 
-  <!-- ABERTURA -->
-  <div id="abertura">
-    <h1>Kimberly & Willian</h1>
-    <div class="btn-abrir" onclick="abrirConvite()">
-      Abrir convite
-    </div>
-  </div>
+<div id="abertura">
+  <div class="nomes">Kimberly & Willian</div>
+  <div class="sub">12 de Dezembro de 2026</div>
+  <div class="btn" onclick="abrir()">Abrir convite</div>
+</div>
 
-  <!-- CONVITE -->
-  <div id="convite">
+<div id="convite">
+  <h2>Você está convidado</h2>
 
-    <div class="titulo">
-      Convidam para a cerimônia religiosa de seu casamento:
-    </div>
+  <p>Às 16:30 horas</p>
+  <p>Sábado, 12 de dezembro de 2026</p>
 
-    <div class="nomes">
-      Kimberly & Willian
-    </div>
+  <p><b>Santuário Nossa Senhora das Brotas</b></p>
+  <p>Piraí do Sul - PR</p>
 
-    <div class="texto">
-      Às <b>16:30 horas</b><br>
-      Sábado, 12 de dezembro de 2026
-    </div>
+  <br>
 
-    <div class="texto">
-      Santuário Nossa Senhora das Brotas<br>
-      Piraí do Sul - PR
-    </div>
+  <a href="https://noivos.casar.com/kimberleyewillian" target="_blank">
+    Confirmar Presença
+  </a>
+</div>
 
-    <div class="texto">
-      Após a cerimônia, os convidados serão recepcionados no local
-    </div>
-
-    <div class="botao">
-      <a href="https://noivos.casar.com/kimberleyewillian" target="_blank">
-        Confirmar Presença
-      </a>
-    </div>
-
-  </div>
-
-  <script>
-    function abrirConvite() {
-      document.getElementById("abertura").style.display = "none";
-      document.getElementById("convite").style.display = "block";
-    }
-  </script>
+<script>
+function abrir() {
+  document.getElementById("abertura").style.display = "none";
+  document.body.style.overflow = "auto";
+  document.getElementById("convite").style.display = "block";
+}
+</script>
 
 </body>
 </html>
