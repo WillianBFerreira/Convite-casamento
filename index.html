@@ -4,82 +4,88 @@
   <meta charset="UTF-8">
   <title>Casamento Kimberly & Willian</title>
 
-  <!-- Fontes elegantes -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
-      background-color: #eef1f5;
       font-family: 'Playfair Display', serif;
+      background-color: #eef1f5;
       color: #5c6f8c;
       text-align: center;
     }
 
+    /* TELA DE ABERTURA */
+    .abertura {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #eef1f5;
+    }
+
+    .abertura h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+
+    .btn-abrir {
+      border: 1px solid #5c6f8c;
+      padding: 12px 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-abrir:hover {
+      background: #5c6f8c;
+      color: white;
+    }
+
+    /* CONVITE */
     .container {
+      display: none;
       max-width: 650px;
       margin: 50px auto;
-      background: #ffffff;
+      background: white;
       padding: 50px 30px;
       border: 1px solid #5c6f8c;
       border-radius: 12px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      animation: fade 1.2s ease;
     }
 
-    .pais {
-      display: flex;
-      justify-content: space-between;
-      font-size: 14px;
-      margin-bottom: 30px;
-      color: #7a8ca5;
-    }
-
-    .titulo {
-      margin: 20px 0;
-      font-size: 18px;
-      letter-spacing: 1px;
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .nomes {
       font-family: 'Great Vibes', cursive;
       font-size: 52px;
       margin: 20px 0;
-      color: #4a5d78;
     }
 
     .texto {
       font-size: 18px;
-      line-height: 1.6;
-      margin: 20px 0;
-    }
-
-    .local {
-      font-weight: 500;
+      margin: 15px 0;
     }
 
     .botao {
-      margin-top: 40px;
+      margin-top: 30px;
     }
 
     .botao a {
       text-decoration: none;
       border: 1px solid #5c6f8c;
-      padding: 14px 30px;
-      border-radius: 6px;
+      padding: 12px 25px;
       color: #5c6f8c;
-      font-size: 16px;
-      transition: 0.3s;
     }
 
     .botao a:hover {
-      background-color: #5c6f8c;
-      color: #fff;
-    }
-
-    .rodape {
-      margin-top: 30px;
-      font-size: 14px;
-      color: #7a8ca5;
+      background: #5c6f8c;
+      color: white;
     }
 
   </style>
@@ -87,9 +93,18 @@
 
 <body>
 
-  <div class="container">
+  <!-- ABERTURA -->
+  <div class="abertura" id="abertura">
+    <h1>Kimberly & Willian</h1>
+    <div class="btn-abrir" onclick="abrirConvite()">
+      Abrir convite
+    </div>
+  </div>
 
-    <div class="titulo">
+  <!-- CONVITE -->
+  <div class="container" id="convite">
+
+    <div class="texto">
       Convidam para a cerimônia religiosa de seu casamento:
     </div>
 
@@ -98,18 +113,13 @@
     </div>
 
     <div class="texto">
-      Que se realizará às <b>16:30 horas</b><br>
-      de <b>sábado, 12 de dezembro de 2026</b>
-    </div>
-
-    <div class="texto local">
-      Santuário Nossa Senhora das Brotas<br>
-      Piraí do Sul - PR
+      Às <b>16:30 horas</b><br>
+      Sábado, 12 de dezembro de 2026
     </div>
 
     <div class="texto">
-      Após a cerimônia, os convidados serão recepcionados<br>
-      no local do evento
+      Santuário Nossa Senhora das Brotas<br>
+      Piraí do Sul - PR
     </div>
 
     <div class="botao">
@@ -118,11 +128,14 @@
       </a>
     </div>
 
-    <div class="rodape">
-      Sua presença é muito importante para nós 💙
-    </div>
-
   </div>
+
+  <script>
+    function abrirConvite() {
+      document.getElementById("abertura").style.display = "none";
+      document.getElementById("convite").style.display = "block";
+    }
+  </script>
 
 </body>
 </html>
