@@ -4,28 +4,27 @@
   <meta charset="UTF-8">
   <title>Casamento Kimberly & Willian</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
-      font-family: 'Playfair Display', serif;
       background-color: #eef1f5;
+      font-family: 'Playfair Display', serif;
       color: #5c6f8c;
       text-align: center;
     }
 
-    /* TELA DE ABERTURA */
-    .abertura {
+    /* ABERTURA */
+    #abertura {
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: #eef1f5;
     }
 
-    .abertura h1 {
+    #abertura h1 {
       font-family: 'Great Vibes', cursive;
       font-size: 60px;
       margin-bottom: 20px;
@@ -43,12 +42,12 @@
       color: white;
     }
 
-    /* CONVITE */
-    .container {
+    /* CONVITE (ESCONDIDO INICIALMENTE) */
+    #convite {
       display: none;
       max-width: 650px;
       margin: 50px auto;
-      background: white;
+      background: #ffffff;
       padding: 50px 30px;
       border: 1px solid #5c6f8c;
       border-radius: 12px;
@@ -61,6 +60,11 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    .titulo {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
     .nomes {
       font-family: 'Great Vibes', cursive;
       font-size: 52px;
@@ -69,6 +73,7 @@
 
     .texto {
       font-size: 18px;
+      line-height: 1.6;
       margin: 15px 0;
     }
 
@@ -81,6 +86,7 @@
       border: 1px solid #5c6f8c;
       padding: 12px 25px;
       color: #5c6f8c;
+      transition: 0.3s;
     }
 
     .botao a:hover {
@@ -94,7 +100,7 @@
 <body>
 
   <!-- ABERTURA -->
-  <div class="abertura" id="abertura">
+  <div id="abertura">
     <h1>Kimberly & Willian</h1>
     <div class="btn-abrir" onclick="abrirConvite()">
       Abrir convite
@@ -102,9 +108,9 @@
   </div>
 
   <!-- CONVITE -->
-  <div class="container" id="convite">
+  <div id="convite">
 
-    <div class="texto">
+    <div class="titulo">
       Convidam para a cerimônia religiosa de seu casamento:
     </div>
 
@@ -120,6 +126,10 @@
     <div class="texto">
       Santuário Nossa Senhora das Brotas<br>
       Piraí do Sul - PR
+    </div>
+
+    <div class="texto">
+      Após a cerimônia, os convidados serão recepcionados no local
     </div>
 
     <div class="botao">
