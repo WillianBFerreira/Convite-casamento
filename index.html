@@ -1,159 +1,227 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Casamento Kimberly & Willian</title>
+<meta charset="UTF-8">
+<title>Casamento Kimberly & Willian</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Great+Vibes&family=Montserrat:wght@300&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      background-color: #eef1f5;
-      font-family: 'Playfair Display', serif;
-      color: #5c6f8c;
-      text-align: center;
-      overflow: hidden;
-    }
+<style>
+body {
+  margin: 0;
+  background-color: #eef1f5;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  overflow: hidden;
+  color: #5c6f8c;
+}
 
-    /* ABERTURA */
-    #abertura {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      animation: fadeIn 1.5s ease;
-    }
+/* ABERTURA */
+#abertura {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
-    .envelope {
-      width: 680px;
-      max-width: 90%;
-      cursor: pointer;
-      transition: 0.4s;
-    }
+.envelope {
+  width: 520px;
+  max-width: 95%;
+  cursor: pointer;
+  animation: entrada 1.5s ease;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
 
-    .envelope:hover {
-      transform: scale(1.05);
-    }
+.envelope:hover {
+  transform: scale(1.05);
+}
 
-    .texto-abrir {
-      margin-top: 20px;
-      font-size: 14px;
-      letter-spacing: 2px;
-    }
+.texto-abrir {
+  margin-top: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
 
-    /* CONVITE */
-    #convite {
-      display: none;
-      max-width: 650px;
-      margin: 50px auto;
-      background: #ffffff;
-      padding: 50px 30px;
-      border: 1px solid #5c6f8c;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      animation: subir 1.2s ease;
-    }
+@keyframes entrada {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
 
-    .titulo {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
+.zoom-out {
+  transform: scale(1.8);
+  opacity: 0;
+}
 
-    .nomes {
-      font-family: 'Great Vibes', cursive;
-      font-size: 52px;
-      margin: 20px 0;
-    }
+/* CONVITE */
+#convite {
+  display: none;
+  max-width: 650px;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 50px 30px;
+  border: 1px solid #d6dce5;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+  animation: subir 1.2s ease;
+}
 
-    .texto {
-      font-size: 18px;
-      line-height: 1.6;
-      margin: 15px 0;
-    }
+.titulo {
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
 
-    .botao {
-      margin-top: 30px;
-    }
+.nomes {
+  font-family: 'Great Vibes', cursive;
+  font-size: 56px;
+  margin: 20px 0;
+}
 
-    .botao a {
-      text-decoration: none;
-      border: 1px solid #5c6f8c;
-      padding: 12px 25px;
-      color: #5c6f8c;
-      transition: 0.3s;
-    }
+.texto {
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 15px 0;
+  opacity: 0.9;
+}
 
-    .botao a:hover {
-      background: #5c6f8c;
-      color: white;
-    }
+/* BOTÕES PREMIUM */
+.botoes {
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+.botoes a {
+  position: relative;
+  text-decoration: none;
+  padding: 16px 30px;
+  width: 270px;
 
-    @keyframes subir {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 
-  </style>
+  color: #5c6f8c;
+
+  border-radius: 10px;
+  border: 1px solid rgba(92, 111, 140, 0.2);
+
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+
+  transition: all 0.35s ease;
+}
+
+/* brilho */
+.botoes a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.6),
+    transparent
+  );
+  transition: 0.6s;
+}
+
+/* hover */
+.botoes a:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  background: #5c6f8c;
+  color: white;
+}
+
+.botoes a:hover::after {
+  left: 120%;
+}
+
+/* clique */
+.botoes a:active {
+  transform: scale(0.97);
+}
+
+@keyframes subir {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- ABERTURA COM ENVELOPE -->
-  <div id="abertura">
+<div id="abertura">
+  <img src="envelope.png" class="envelope" id="envelope" onclick="abrirConvite()">
+  <div class="texto-abrir">Clique para abrir o convite</div>
+</div>
 
-    <img src="envelope.png" class="envelope" onclick="abrirConvite()">
+<div id="convite">
 
-    <div class="texto-abrir">Abrir convite</div>
-
+  <div class="titulo">
+    Convidam para a cerimônia religiosa de seu casamento
   </div>
 
-  <!-- CONVITE -->
-  <div id="convite">
-
-    <div class="titulo">
-      Convidam para a cerimônia religiosa de seu casamento:
-    </div>
-
-    <div class="nomes">
-      Kimberly & Willian
-    </div>
-
-    <div class="texto">
-      Às <b>16:30 horas</b><br>
-      Sábado, 12 de dezembro de 2026
-    </div>
-
-    <div class="texto">
-      Santuário Nossa Senhora das Brotas<br>
-      Piraí do Sul - PR
-    </div>
-
-    <div class="texto">
-      Após a cerimônia, os convidados serão recepcionados no local
-    </div>
-
-    <div class="botao">
-      <a href="https://noivos.casar.com/kimberleyewillian" target="_blank">
-        Confirmar Presença
-      </a>
-    </div>
-
+  <div class="nomes">
+    Kimberly & Willian
   </div>
 
-  <script>
-    function abrirConvite() {
-      document.getElementById("abertura").style.display = "none";
-      document.getElementById("convite").style.display = "block";
-      document.body.style.overflow = "auto";
-    }
-  </script>
+  <div class="texto">
+    Às <b>16:30 horas</b><br>
+    Sábado, 12 de dezembro de 2026
+  </div>
+
+  <div class="texto">
+    Santuário Nossa Senhora das Brotas<br>
+    Piraí do Sul - PR
+  </div>
+
+  <div class="texto">
+    Após a cerimônia, os convidados serão recepcionados no local
+  </div>
+
+  <div class="botoes">
+    <a href="https://noivos.casar.com/kimberleyewillian" target="_blank">Confirmar Presença</a>
+    <a href="https://maps.google.com/?q=Santuário+Nossa+Senhora+das+Brotas+Piraí+do+Sul" target="_blank">Localização</a>
+    <a href="https://noivos.casar.com/kimberleyewillian" target="_blank">Lista de Presentes</a>
+  </div>
+
+</div>
+
+<script>
+function abrirConvite() {
+  const env = document.getElementById("envelope");
+
+  env.classList.add("zoom-out");
+
+  setTimeout(() => {
+    document.getElementById("abertura").style.display = "none";
+    document.getElementById("convite").style.display = "block";
+    document.body.style.overflow = "auto";
+  }, 800);
+}
+</script>
 
 </body>
 </html>
